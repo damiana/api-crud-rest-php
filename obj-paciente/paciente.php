@@ -47,11 +47,11 @@ class Paciente{
         $query = "UPDATE pacientes
                 SET
                     nome = :nome,
-                    -- dataNasc = :dataNasc,
-                    -- cidade = :cidade,
+                    dataNasc = :dataNasc,
                     email = :email,
-                    nickName = :nickName
-                    -- senha = :senha,
+                    senha = :senha
+                    -- nickName = :nickName
+                    -- cidade = :cidade,
                     -- irDentista = :irDentista,
                     -- usaAparelho = :usaAparelho,
                     -- temSangramento = :temSangramento,
@@ -68,20 +68,21 @@ class Paciente{
     
         // converte caracteres especiais
         $this->nome=htmlspecialchars(strip_tags($this->nome));
-        // $this->cidade=htmlspecialchars(strip_tags($this->cidade));
         $this->email=htmlspecialchars(strip_tags($this->email));
-        $this->nickName=htmlspecialchars(strip_tags($this->nickName));
-        // $this->senha=htmlspecialchars(strip_tags($this->senha));
+        $this->senha=htmlspecialchars(strip_tags($this->senha));
         $this->idPacientes=htmlspecialchars(strip_tags($this->idPacientes));
     
         // bind dos novos valores
         $stmt->bindParam(':idPacientes', $this->idPacientes);
-        //$stmt->bindParam(':dataNasc', $this->dataNasc);
         $stmt->bindParam(':nome', $this->nome);
-        // $stmt->bindParam(':cidade', $this->cidade);
+        $stmt->bindParam(':dataNasc', $this->dataNasc);
         $stmt->bindParam(':email', $this->email);
-        $stmt->bindParam(':nickName', $this->nickName);
-        // $stmt->bindParam(':senha', $this->senha);
+        $stmt->bindParam(':senha', $this->senha);
+
+        // Descomentar esse código para editar as demais informações.
+        
+        // $stmt->bindParam(':cidade', $this->cidade);
+        // $stmt->bindParam(':nickName', $this->nickName);
         // $stmt->bindParam(':irDentista', $this->irDentista);
         // $stmt->bindParam(':usaAparelho', $this->usaAparelho);
         // $stmt->bindParam(':temSangramento', $this->temSangramento);

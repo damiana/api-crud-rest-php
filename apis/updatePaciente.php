@@ -25,12 +25,15 @@ $data = (object) $_POST; // usar com postman
 $paciente->idPacientes = $data->idPacientes;
  
 // set valores pacientes
-//$paciente->dataNasc = $data->dataNasc;
 $paciente->nome = $data->nome;
-// $paciente->cidade = $data->cidade;
+$paciente->dataNasc = $data->dataNasc;
 $paciente->email = $data->email;
-$paciente->nickName = $data->nickName;
-// $paciente->senha = $data->senha;
+$paciente->senha = $data->senha;
+
+// Descomentar esse código para editar as demais informações.
+
+// $paciente->nickName = $data->nickName;
+// $paciente->cidade = $data->cidade;
 // $paciente->irDentista = $data->irDentista;
 // $paciente->usaAparelho = $data->usaAparelho;
 // $paciente->temSangramento = $data->temSangramento;
