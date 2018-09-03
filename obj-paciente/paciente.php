@@ -40,6 +40,19 @@ class Paciente{
         return $stmt;
     }
 
+    // obtem a lista quiz
+    function getQuestoes(){
+        $query = "SELECT * FROM questoes ORDER BY RAND() LIMIT 1";
+        
+        // preparar instrução de consulta
+        $stmt = $this->conn->prepare($query);
+
+        // executa query
+        $stmt->execute();
+        
+        return $stmt;
+    }
+
     // update cadastro
     function updateDadosCadastrais(){
     
