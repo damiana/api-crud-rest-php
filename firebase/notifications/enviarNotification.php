@@ -95,6 +95,7 @@ function enviarNotificacao() {
     curl_close($ch);
 
     // exibe o retorno completo da API FCM
-    return json_encode($fields,JSON_PRETTY_PRINT);
+    // json_encode($fields,JSON_PRETTY_PRINT);
+    return $result;
     }
 ?>
